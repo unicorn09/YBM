@@ -86,7 +86,7 @@
             android:gravity="center_horizontal"
             tools:text="Follow us @ybmofficial on"
             android:layout_marginTop="84.2dp"
-            android:fontFamily="@font/proximanova-semibold"/>
+            android:fontFamily="@font/proximanovasemibold"/>
 
     </LinearLayout>
     <Button
@@ -102,5 +102,5 @@
         android:text="Go to Home"
         android:textColor="#ffffff"
         android:textSize="15sp"
-        android:fontFamily="@font/proximanova-semibold"/>
+        android:fontFamily="@font/proximanovasemibold"/>
 </LinearLayout>
