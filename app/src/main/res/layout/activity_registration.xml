@@ -50,16 +50,17 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="35dp"
-            android:paddingLeft="15dp"
-            android:hint="Password"
             android:background="@drawable/shape_text_input_box"
-            />
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="35dp"
             android:paddingLeft="15dp"
             android:hint="Mobile Number"
+            android:inputType="number"
             android:background="@drawable/shape_text_input_box"
             />
 
@@ -77,12 +78,15 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/shape_button_submit"
-        android:text="Get OTP"
-        android:textSize="15sp"
-        android:textColor="#ffffff"
         android:layout_marginBottom="22dp"
         android:layout_marginTop="230dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:lineSpacingExtra="3sp"
+        android:gravity="center_horizontal"
+        android:text="Get OTP"
         />
+
 </LinearLayout>

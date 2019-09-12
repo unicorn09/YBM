@@ -3,7 +3,7 @@ package com.example.ybm;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Registreation2 extends AppCompatActivity {
+public class Registration2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
