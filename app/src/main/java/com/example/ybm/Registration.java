@@ -40,7 +40,8 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         user = mAuth.getCurrentUser();
 
         if(mAuth.getCurrentUser() != null){
-            Toast.makeText(this, "First logout from this account", Toast.LENGTH_SHORT).show();
+            Intent i=new Intent(Registration.this,BasicInfo.class);
+            startActivity(i);
             finish();
         }
 

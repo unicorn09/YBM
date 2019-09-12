@@ -38,6 +38,7 @@
             />
 
         <EditText
+            android:id="@+id/info_name"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_marginTop="100dp"
@@ -47,6 +48,7 @@
             />
 
         <EditText
+            android:id="@+id/info_age"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_marginTop="35dp"
@@ -106,6 +108,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/info_male"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15sp"
@@ -120,6 +123,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/info_female"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15sp"
@@ -134,6 +138,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/info_other"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15sp"
@@ -183,6 +188,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/bihar_belong_Y"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15sp"
@@ -197,6 +203,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/bihar_belong_N"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15sp"
