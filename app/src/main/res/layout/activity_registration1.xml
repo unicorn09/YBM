@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#ff0000"
+        android:lineSpacingExtra="3sp"
+        android:fontFamily="@font/TimesNewRomanPSMT"
+        android:gravity="center_horizontal"
+        tools:text="Young Bihar Movement"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="562dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginRight="98dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#8e8e8e"
+        android:lineSpacingExtra="3sp"
+        android:gravity="center_horizontal"
+        tools:text="Registration"
+        android:layout_marginTop="82dp"
+        android:layout_marginBottom="540dp"
+        android:layout_marginLeft="141dp"
+        android:layout_marginRight="141dp"
+        />
+    </LinearLayout>
+
+</RelativeLayout>
