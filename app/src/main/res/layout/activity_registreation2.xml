@@ -32,6 +32,7 @@
             android:textSize="15sp"
             android:textColor="#8e8e8e"
             android:text="Registration"
+            android:fontFamily="@font/proximanovamedium"
             android:layout_marginTop="5dp"
             />
     </LinearLayout>
@@ -62,6 +63,7 @@
             android:lineSpacingExtra="2sp"
             android:gravity="center_horizontal"
             android:text="Enter OTP"
+            android:fontFamily="@font/proximanovamedium"
             android:layout_marginTop="57dp"
             android:layout_marginRight="60dp"
             />
@@ -163,6 +165,7 @@
             android:gravity="center_horizontal"
             android:text="Haven’t received OTP yet?"
             android:layout_marginTop="77dp"
+            android:fontFamily="@font/proximanovamedium"
             />
 
         <TextView

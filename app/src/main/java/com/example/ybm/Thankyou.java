@@ -8,6 +8,6 @@ public class Thankyou extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_completed);
+        setContentView(R.layout.activity_thankyou);
     }
 }
