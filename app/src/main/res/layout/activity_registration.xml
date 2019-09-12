@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="59dp"
+
+            android:textColor="#ff0000"
+            android:text="Young Bihar Movement"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#8e8e8e"
+            android:text="Registration"
+            android:layout_marginTop="5dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="100dp"
+            android:paddingLeft="15dp"
+            android:hint="Username"
+            android:background="@drawable/shape_text_input_box"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/shape_text_input_box"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="15dp"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            android:background="@drawable/shape_text_input_box"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="12sp"
+            android:textColor="#9b000000"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:text="You’ll receive an OTP to this number" />
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_button_submit"
+        android:layout_marginBottom="22dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:lineSpacingExtra="3sp"
+        android:gravity="center_horizontal"
+        android:text="Get OTP"
+        />
+
+</LinearLayout>
