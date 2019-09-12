@@ -33,9 +33,69 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Biodata"
+            android:fontFamily="@font/proximanovaregular"
             android:textColor="#8e8e8e"
             android:textSize="15sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:text="Upload your CVV/Biodata"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/proximanovaregular"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/upload"
+            android:layout_marginTop="25dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/group_412"
+            android:layout_marginTop="25dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:text="Write on page, click picture &#038; upload"
+            android:fontFamily="@font/proximanovaregular"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera"
+            android:layout_marginTop="26dp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:gravity="bottom"
+        >
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Finish"
+            android:textSize="15sp"
+            android:textColor="#FFF"
+            android:background="@drawable/shape_btn"
+            />
 
     </LinearLayout>
 
