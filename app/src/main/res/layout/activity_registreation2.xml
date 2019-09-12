@@ -14,8 +14,6 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
         >
 
         <TextView
@@ -25,6 +23,7 @@
             android:layout_marginTop="59dp"
             android:textColor="#ff0000"
             android:text="Young Bihar Movement"
+            android:fontFamily="@font/timesnewromanpsmt"
             />
 
         <TextView
@@ -40,18 +39,175 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="72dp"
-        android:layout_marginTop="144dp"
-        >
+        android:layout_marginHorizontal="72dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:letterSpacing="0.04"
-            android:lineSpacingExtra="3sp"
             android:text="OTP has been sent to Number"
             android:textColor="#000000"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="3sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#000000"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="2sp"
+            android:gravity="center_horizontal"
+            android:text="Enter OTP"
+            android:layout_marginTop="57dp"
+            android:layout_marginRight="60dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_rectangle"
+            android:textSize="23sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+                android:inputType="number"
+                android:layout_marginEnd="3dp"
+            android:lineSpacingExtra="5sp"
+            android:gravity="center_horizontal"
+                android:maxLength="1"
+
+            />
+            <EditText
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/shape_rectangle"
+                android:textSize="23sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:letterSpacing="0.04"
+                android:lineSpacingExtra="5sp"
+                android:inputType="number"
+                android:layout_marginEnd="3dp"
+                android:gravity="center_horizontal"
+                android:maxLength="1"
+                />
+            <EditText
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_rectangle"
+            android:textSize="23sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+                android:maxLength="1"
+            android:inputType="number"
+            android:layout_marginEnd="3dp"
+            android:lineSpacingExtra="5sp"
+            android:gravity="center_horizontal"
+
+            />
+            <EditText
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_rectangle"
+            android:textSize="23sp"
+            android:layout_marginTop="8dp"
+            android:inputType="number"
+            android:layout_marginEnd="3dp"
+            android:textColor="#000000"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="5sp"
+            android:gravity="center_horizontal"
+                android:maxLength="1"
+            />
+            <EditText
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_rectangle"
+            android:textSize="23sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:letterSpacing="0.04"
+            android:inputType="number"
+            android:layout_marginEnd="3dp"
+            android:lineSpacingExtra="5sp"
+            android:gravity="center_horizontal"
+                android:maxLength="1"
+            />
+            <EditText
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/shape_rectangle"
+                android:textSize="23sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:letterSpacing="0.04"
+                android:inputType="number"
+                android:layout_marginEnd="3dp"
+                android:lineSpacingExtra="5sp"
+                android:gravity="center_horizontal"
+                android:maxLength="1"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#000000"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="3sp"
+            android:gravity="center_horizontal"
+            android:text="Haven’t received OTP yet?"
+            android:layout_marginTop="77dp"
+            />
+
+        <TextView
+            android:layout_width="136dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/shape_btn_resend"
+            android:fontFamily="@font/proximanovaregular"
+            android:text="Resend"
+            android:paddingTop="6dp"
+            android:textColor="#535353"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#000000"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="2sp"
+            android:gravity="center_horizontal"
+            android:text="OR"
+            android:layout_marginTop="11dp"/>
+        <TextView
+            android:layout_width="136dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/shape_btn_resend"
+            android:fontFamily="@font/proximanovaregular"
+            android:text="Change Number"
+            android:paddingTop="6dp"
+            android:textColor="#535353"
+            android:textAlignment="center"/>
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/shape_button_submit"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="3sp"
+        android:text="Verify"
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
 </LinearLayout>
