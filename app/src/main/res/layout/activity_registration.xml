@@ -38,6 +38,7 @@
             />
 
         <EditText
+            android:id="@+id/username_regis"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="100dp"
@@ -47,6 +48,7 @@
             />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="35dp"
@@ -55,6 +57,7 @@
             android:inputType="textPassword"
             android:paddingLeft="15dp" />
         <EditText
+            android:id="@+id/mobileno"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="35dp"
@@ -75,6 +78,7 @@
             android:text="You’ll receive an OTP to this number" />
     </LinearLayout>
     <Button
+        android:id="@+id/getotp"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/shape_button_submit"
