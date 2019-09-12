@@ -66,6 +66,7 @@
         android:orientation="horizontal"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        android:gravity="end"
         >
 
         <TextView
@@ -73,29 +74,27 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:textColor="#414141"
-            android:lineSpacingExtra="9sp"
             android:text="Gender"
             android:layout_marginLeft="10dp"
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="82dp"
+            android:layout_height="45dp"
             android:textSize="15sp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="17dp"
             android:paddingRight="17dp"
             android:textColor="#9e9e9e"
-            android:lineSpacingExtra="9sp"
             android:text="Male"
             android:layout_marginLeft="14dp"
             android:background="@drawable/shape_text_input_box"
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="82dp"
+            android:layout_height="45dp"
             android:textSize="15sp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
@@ -103,14 +102,13 @@
             android:paddingRight="17dp"
             android:layout_marginLeft="7dp"
             android:textColor="#9e9e9e"
-            android:lineSpacingExtra="9sp"
             android:text="Female"
             android:background="@drawable/shape_text_input_box"
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="82dp"
+            android:layout_height="45dp"
             android:textSize="15sp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
@@ -118,7 +116,6 @@
             android:paddingRight="17dp"
             android:layout_marginLeft="7dp"
             android:textColor="#9e9e9e"
-            android:lineSpacingExtra="9sp"
             android:text="Others"
             android:background="@drawable/shape_text_input_box"
             />
