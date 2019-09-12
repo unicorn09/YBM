@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">YBM</string>
+
+    <string-array name="listOfDistricts">
+
+        <item>Patna</item>
+        <item>Bhagalpur</item>
+        <item>Rohtas</item>
+        <item>Samastipur</item>
+        <item>Hajipur</item>
+        <item>Nalanda</item>
+
+    </string-array>
+
 </resources>

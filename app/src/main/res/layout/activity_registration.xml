@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:layout_marginTop="59dp"
-            android:fontFamily="@font/timesnewromanpsmt"
+
             android:textColor="#ff0000"
             android:text="Young Bihar Movement"
             />
@@ -34,7 +34,6 @@
             android:textSize="15sp"
             android:textColor="#8e8e8e"
             android:text="Registration"
-            android:fontFamily="@font/proximanovaregular"
             android:layout_marginTop="5dp"
             />
 
@@ -44,7 +43,6 @@
             android:layout_marginTop="100dp"
             android:paddingLeft="15dp"
             android:hint="Username"
-            android:fontFamily="@font/proximanovaregular"
             android:background="@drawable/shape_text_input_box"
             />
 
@@ -55,8 +53,7 @@
             android:background="@drawable/shape_text_input_box"
             android:hint="Password"
             android:inputType="textPassword"
-            android:paddingLeft="15dp"
-            android:fontFamily="@font/proximanovaregular"/>
+            android:paddingLeft="15dp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -64,7 +61,6 @@
             android:paddingLeft="15dp"
             android:hint="Mobile Number"
             android:inputType="number"
-            android:fontFamily="@font/proximanovaregular"
             android:background="@drawable/shape_text_input_box"
             />
 
@@ -74,15 +70,11 @@
             android:lineSpacingExtra="12sp"
             android:textColor="#9b000000"
             android:textSize="12sp"
-            android:fontFamily="@font/proximanovaregular"
             android:layout_marginTop="10dp"
             android:paddingLeft="15dp"
             android:text="You’ll receive an OTP to this number" />
-
-
     </LinearLayout>
     <Button
-        android:id="@+id/get_otp"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/shape_button_submit"
