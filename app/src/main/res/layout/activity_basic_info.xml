@@ -6,37 +6,124 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BasicInfo"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFF">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:layout_marginTop="59dp"
-        android:fontFamily="@font/timesnewromanpsmt"
-        android:textColor="#ff0000"
-        android:lineSpacingExtra="3sp"
-        tools:text="Young Bihar Movement"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textColor="#8e8e8e"
-        android:lineSpacingExtra="3sp"
-        android:gravity="center_horizontal"
-        tools:text="Registration"
-        android:layout_marginTop="5dp"
-        />
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="37dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        >
 
-        android:hint="Your name"
-        android:background="@drawable/shape_text_input_box"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="59dp"
+            android:fontFamily="@font/timesnewromanpsmt"
+            android:textColor="#ff0000"
+            android:text="Young Bihar Movement"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#8e8e8e"
+            android:text="Registration"
+            android:layout_marginTop="5dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="100dp"
+            android:paddingLeft="15dp"
+            android:hint="Your Name"
+            android:background="@drawable/shape_text_input_box"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="15dp"
+            android:hint="Your Age"
+            android:background="@drawable/shape_text_input_box"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#414141"
+            android:lineSpacingExtra="9sp"
+            android:text="Gender"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:textColor="#9e9e9e"
+            android:lineSpacingExtra="9sp"
+            android:text="Male"
+            android:layout_marginLeft="14dp"
+            android:background="@drawable/shape_text_input_box"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:layout_marginLeft="7dp"
+            android:textColor="#9e9e9e"
+            android:lineSpacingExtra="9sp"
+            android:text="Female"
+            android:background="@drawable/shape_text_input_box"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:layout_marginLeft="7dp"
+            android:textColor="#9e9e9e"
+            android:lineSpacingExtra="9sp"
+            android:text="Others"
+            android:background="@drawable/shape_text_input_box"
+            />
+
+
+    </LinearLayout>
 
 </LinearLayout>
