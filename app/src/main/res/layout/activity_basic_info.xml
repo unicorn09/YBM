@@ -215,26 +215,123 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="29dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#61000000"
+            android:text="Which district?"
+            android:background="@drawable/shape_text_input_box"
+            android:layout_centerVertical="true"
+            android:drawableRight="@drawable/ic_arrow_drop_down_black"
+
+            />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="12dp"
-        android:gravity="bottom"
+        android:orientation="vertical"
         >
 
-        <Button
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:textColor="#FFF"
-            android:text="Next"
-            android:background="@drawable/shape_btn"
-            />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="14dp"
+                android:layout_marginTop="12dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you also currently live in Bihar"
+                    android:textColor="#414141"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:paddingRight="4dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:textColor="#9e9e9e"
+                    android:text="Y"
+                    android:layout_marginLeft="14dp"
+                    android:background="@drawable/shape_text_input_box"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="#9e9e9e"
+                    android:text="N"
+                    android:background="@drawable/shape_text_input_box"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            >
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textColor="#FFF"
+                android:text="Next"
+                android:background="@drawable/shape_btn"
+                />
+
+        </LinearLayout>
+
 
     </LinearLayout>
-
 
 
 </LinearLayout>
