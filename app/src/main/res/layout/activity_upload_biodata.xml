@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            android:textSize="17sp"
             android:layout_marginTop="59dp"
             android:fontFamily="@font/timesnewromanpsmt"
             android:textColor="#ff0000"
@@ -31,12 +31,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="#8e8e8e"
-            android:text="Biodata"
             android:layout_marginTop="5dp"
-            />
-
+            android:text="Biodata"
+            android:textColor="#8e8e8e"
+            android:textSize="15sp" />
 
 
     </LinearLayout>
