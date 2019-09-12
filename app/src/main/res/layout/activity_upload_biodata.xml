@@ -48,6 +48,7 @@
             />
 
         <ImageView
+            android:id="@+id/upload_cv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/upload"
@@ -71,6 +72,7 @@
             />
 
         <ImageView
+            android:id="@+id/camera_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/camera"

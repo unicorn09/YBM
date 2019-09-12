@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Bio"></activity>
-        <activity android:name=".UploadBiodata" />
+        <activity android:name=".Registration" />
         <activity android:name=".BasicInfo" />
         <activity android:name=".Registration2"/>
-        <activity android:name=".Registration">
+        <activity android:name=".UploadBiodata">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
