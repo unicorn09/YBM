@@ -6,13 +6,13 @@
         android:startColor="#FFF"
         android:endColor="#FFF"
         />
-   <stroke
+    <stroke
         android:color="#efefef"
         android:width="1dp"
         />
 
     <corners
-        android:radius="7dp"
+        android:radius="16dp"
         />
 
 </shape>
