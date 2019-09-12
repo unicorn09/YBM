@@ -6,16 +6,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BasicInfo"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17sp"
+        android:layout_marginTop="59dp"
         android:fontFamily="@font/timesnewromanpsmt"
         android:textColor="#ff0000"
         android:lineSpacingExtra="3sp"
         tools:text="Young Bihar Movement"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#8e8e8e"
+        android:lineSpacingExtra="3sp"
+        android:gravity="center_horizontal"
+        tools:text="Registration"
+        android:layout_marginTop="5dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+
+        android:hint="Your name"
+        android:background="@drawable/shape_text_input_box"
         />
 
 </LinearLayout>
