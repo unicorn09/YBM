@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingRight="64.2dp"
+        android:paddingLeft="64.2dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="59dp"
+            android:fontFamily="@font/timesnewromanpsmt"
+            android:textColor="#ff0000"
+            android:text="Young Bihar Movement"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#064998"
+            android:lineSpacingExtra="3sp"
+            android:gravity="center_horizontal"
+            tools:text="Registered"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/proximanovamedium"
+            />
+        <ImageView
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_verified"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:lineSpacingExtra="8sp"
+            android:gravity="center_horizontal"
+            tools:text="Thank you so much for showing your interest &amp; supporting us"
+            android:layout_marginTop="34.8dp"
+            android:fontFamily="@font/proximanovaregular"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
+            android:textColor="#ff0000"
+            android:lineSpacingExtra="13sp"
+            android:gravity="center_horizontal"
+            tools:text="Be a Revolutionary"
+            android:layout_marginTop="51.2dp"
+            android:fontFamily="@font/proximanovaregular"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ff0000"
+            android:lineSpacingExtra="8sp"
+            android:gravity="center_horizontal"
+            tools:text="Wait for the Revolution"
+            android:layout_marginTop="4.8dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#8e8e8e"
+            android:lineSpacingExtra="3sp"
+            android:gravity="center_horizontal"
+            tools:text="Follow us @ybmofficial on"
+            android:layout_marginTop="84.2dp"
+            android:fontFamily="@font/proximanovasemibold"/>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/shape_button_submit"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="3sp"
+        android:text="Go to Home"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:fontFamily="@font/proximanovasemibold"/>
+</LinearLayout>
