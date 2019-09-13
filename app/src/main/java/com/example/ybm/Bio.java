@@ -37,7 +37,7 @@ TextView name1,age1;
                             name1.setText(s1);
                             String s2 = postSnapshot.child("Age").getValue().toString();
                             String s3 = postSnapshot.child("District").getValue().toString();
-                            String s4=postSnapshot.child("IsCurrentlyLivingInBihar").getValue().toString();
+                            String s4=postSnapshot.child("BelongToBihar").getValue().toString();
                             if(s4.equalsIgnoreCase("NotfromBihar"))
                                 age1.setText(s2+"yrs");
                             else
