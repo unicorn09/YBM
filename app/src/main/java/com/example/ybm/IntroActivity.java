@@ -130,8 +130,8 @@ public class IntroActivity extends AppCompatActivity {
     private void addBottomDots(int position)
     {
         dots = new TextView[4];
-        int colorActive = getResources().getColor(R.color.dot_dark_active);
-        int colorInactive = getResources().getColor(R.color.dot_dark_inactive);
+       // int colorActive = getResources().getColor(R.color.dot_dark_active);
+        //int colorInactive = getResources().getColor(R.color.dot_dark_inactive);
 
         dotsLayout.removeAllViews();
         for(int i=0; i<dots.length; i++)
@@ -139,11 +139,11 @@ public class IntroActivity extends AppCompatActivity {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(colorInactive);
+          //  dots[i].setTextColor(colorInactive);
             dotsLayout.addView(dots[i]);
         }
-        if(dots.length>0)
-            dots[position].setTextColor(colorActive);
+        //if(dots.length>0)
+            //dots[position].setTextColor(colorActive);
     }
 
     private boolean restorePrefData() {

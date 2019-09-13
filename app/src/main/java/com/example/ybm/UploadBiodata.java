@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -18,11 +19,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,17 +34,22 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
 import java.io.IOException;
 
 public class UploadBiodata extends AppCompatActivity implements View.OnClickListener {
     private static final int GALLERY_REQUEST =1 ;
     private static final int PICK_IMAGE_REQUEST =234 ;
     private static final int PICK_PDF_CODE =3 ;
+    private static final int GALLERY_INTENT = 5;
+    private static final int PICK_FROM_CAMERA =6 ;
+    private Button button;
     private ImageView pdf;
     private StorageReference storageReference;
     private DatabaseReference mDatabase;
-    private Uri filePath;
+    private Uri outPutfileUri;
     private ImageView camera_image;
+    private ProgressDialog progressDialog;
     String user_id= FirebaseAuth.getInstance().getUid();
     String user_id1= FirebaseAuth.getInstance().getUid();
     @Override
@@ -56,91 +64,102 @@ public class UploadBiodata extends AppCompatActivity implements View.OnClickList
         camera_image.setOnClickListener(this);
         storageReference = FirebaseStorage.getInstance().getReference();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        progressDialog=new ProgressDialog(this);
+        button=(Button)findViewById(R.id.finish);
+        button.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v==pdf)
-            uploadFile();
+            getPDF();
         if(v==camera_image)
         {
-            /*write your function here @Kundan*/
+            getpicture();
         }
+        if(v==button)
+        {
+            Intent i=new Intent(this,Thankyou.class);
+            startActivity(i);
+        }
+    }
+
+    private void getpicture() {
+        Intent captureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        File file = new File(Environment.getExternalStorageDirectory(), "MyPhoto.jpg");
+        outPutfileUri = Uri.fromFile(file);
+        captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, outPutfileUri);
+        startActivityForResult(captureIntent, PICK_FROM_CAMERA);
     }
 
     private void getPDF() {
         //for greater than lolipop versions we need the permissions asked on runtime
         //so if the permission is not available user will go to the screen to allow storage permission
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                    Uri.parse("package:" + getPackageName()));
-            startActivity(intent);
-            return;
-        }
-    }
+        Intent intent = new Intent();
+        intent.setType("application/pdf");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select PDF"), GALLERY_INTENT); }
+
     public String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
-    private void uploadFile() {
 
-
-        if (filePath != null) {
-            //displaying progress dialog while image is uploading
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Uploading");
-            progressDialog.show();
-
-            //getting the storage reference
-
-            final StorageReference sRef = storageReference.child("cvs").child(getFileExtension(filePath));
-
-
-            sRef.putFile(filePath)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressDialog.dismiss();
-
-                            //displaying success toast
-                            Toast.makeText(getApplicationContext(), "File Uploaded ", Toast.LENGTH_LONG).show();
-                        }
-                    })
-
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception exception) {
-                            progressDialog.dismiss();
-                            Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            //displaying the upload progress
-                            double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                            progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
-                        }
-                    });
-        } else {
-
-        }
-    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //when the user choses the file
-        if (requestCode == PICK_PDF_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK ) {
             //if a file is selected
             if (data.getData() != null) {
-                //uploading the file
-                uploadFile();
-            }else{
-                Toast.makeText(this, "No file chosen", Toast.LENGTH_SHORT).show();
+                Uri uri1=data.getData();
+                final StorageReference sRef = storageReference.child(user_id+ getFileExtension(uri1));
+                progressDialog.show();
+   //kundan     final DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference().child("cv");
+                sRef.putFile(uri1)
+                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                progressDialog.dismiss();
+                           //kundan     final DatabaseReference newpost = mDatabase.push();
+                                if (taskSnapshot.getMetadata() != null) {
+                                    if (taskSnapshot.getMetadata().getReference() != null) {
+                                        Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
+                                        result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                            @Override
+                                            public void onSuccess(Uri uri) {
+                                                String pdfurl = uri.toString();
+                                              //kundan  newpost.child("image").setValue(pdfurl);
+                                                progressDialog.dismiss();
+
+                                            }
+                                        });
+                                    }
+                                }
+                                //displaying success toast
+                                Toast.makeText(getApplicationContext(), "File Uploaded ", Toast.LENGTH_LONG).show();
+                            }
+                        })
+
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception exception) {
+                                progressDialog.dismiss();
+                                Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                                //displaying the upload progress
+                                double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                                progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
+                            }
+                        });
+            } else {
+
             }
+        }}
         }
-    }
-}
+
