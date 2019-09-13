@@ -69,38 +69,76 @@
             android:gravity="center_horizontal"
             tools:text="#SupportYBM"
             android:layout_marginTop="171dp"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="46dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#a5a5a5"
-                android:lineSpacingExtra="3sp"
-                android:gravity="center_horizontal"
-                tools:text="Amount"
-                />
 
-            <TextView
-                android:layout_width="252dp"
-                android:layout_height="45dp"
-                android:background="@drawable/shape_donate" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="17dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/proximanovasemibold"
+                    android:textColor="#a5a5a5"
+                    android:lineSpacingExtra="3sp"
+                    tools:text="Amount"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                >
+
+                <EditText
+                    android:hint="Amount"
+                    android:paddingLeft="14dp"
+                    android:fontFamily="@font/proximanovasemibold"
+                    android:textColor="#000"
+                    android:layout_width="252dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/shape_donate"
+                    />
+
+            </LinearLayout>
+
+
         </LinearLayout>
+
     </LinearLayout>
-    <Button
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/shape_button_submit"
-        android:layout_marginBottom="22dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textSize="15sp"
-        android:textColor="#ffffff"
-        android:lineSpacingExtra="3sp"
-        android:gravity="center_horizontal"
-        android:text="Donate"
-        />
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/shape_button_submit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:textColor="#ffffff"
+            android:layout_gravity="bottom"
+            android:text="Donate"
+            />
+
+    </LinearLayout>
+
+
 </LinearLayout>

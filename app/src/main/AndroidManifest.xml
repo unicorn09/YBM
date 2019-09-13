@@ -10,15 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Bio"></activity>
-        <activity android:name=".Registration" />
-        <activity android:name=".BasicInfo" />
-        <activity android:name=".Registration2"/>
-        <activity android:name=".UploadBiodata">
+        <activity android:name=".IntroActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".Registration" />
+        <activity android:name=".Thankyou" />
+        <activity android:name=".BasicInfo" />
+        <activity android:name=".UploadBasicInfo" />
+        <activity android:name=".Registration2"/>
+        <activity android:name=".UploadBiodata">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
