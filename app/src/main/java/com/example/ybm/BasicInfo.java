@@ -72,6 +72,7 @@ public class BasicInfo extends AppCompatActivity implements View.OnClickListener
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(this);
 
+
     }
 
     @Override
@@ -166,8 +167,10 @@ public class BasicInfo extends AppCompatActivity implements View.OnClickListener
 
             UploadBasicInfo u=new UploadBasicInfo(name,age,gender,belongyes,districtstring,currentyes);
             mrefrence.setValue(u);
-            Intent i=new Intent(BasicInfo.this,UploadBiodata.class);
-            startActivity(i);
+            Intent i=new Intent(BasicInfo.this,Bio.class);
+            i.putExtra("Name",infoname.getText().toString());
+            Intent m=new Intent(BasicInfo.this,UploadBiodata.class);
+            startActivity(m);
             finish();
         }
     }

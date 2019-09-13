@@ -35,7 +35,7 @@
             android:textColor="#064998"
             android:lineSpacingExtra="3sp"
             android:gravity="center_horizontal"
-            tools:text="Registered"
+            android:text="Registered"
             android:layout_marginTop="56dp"
             android:fontFamily="@font/proximanovamedium"
             />
@@ -51,7 +51,7 @@
             android:textColor="#000000"
             android:lineSpacingExtra="8sp"
             android:gravity="center_horizontal"
-            tools:text="Thank you so much for showing your interest &amp; supporting us"
+            android:text="Thank you so much for showing your interest &amp; supporting us"
             android:layout_marginTop="34.8dp"
             android:fontFamily="@font/proximanovaregular"
 
@@ -63,7 +63,7 @@
             android:textColor="#ff0000"
             android:lineSpacingExtra="13sp"
             android:gravity="center_horizontal"
-            tools:text="Be a Revolutionary"
+            android:text="Be a Revolutionary"
             android:layout_marginTop="51.2dp"
             android:fontFamily="@font/proximanovaregular"
             />
@@ -74,7 +74,7 @@
             android:textColor="#ff0000"
             android:lineSpacingExtra="8sp"
             android:gravity="center_horizontal"
-            tools:text="Wait for the Revolution"
+            android:text="Wait for the Revolution"
             android:layout_marginTop="4.8dp"
             />
         <TextView
@@ -84,24 +84,25 @@
             android:textColor="#8e8e8e"
             android:lineSpacingExtra="3sp"
             android:gravity="center_horizontal"
-            tools:text="Follow us @ybmofficial on"
+            android:text="Follow us @ybmofficial on"
             android:layout_marginTop="84.2dp"
             android:fontFamily="@font/proximanovasemibold"/>
 
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_gotohome"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="9dp"
-        android:background="@drawable/shape_button_submit"
-        android:gravity="center_horizontal"
-        android:lineSpacingExtra="3sp"
-        android:text="Go to Home"
-        android:textColor="#ffffff"
-        android:textSize="15sp"
-        android:fontFamily="@font/proximanovasemibold"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        >
+
+        <Button
+            android:id="@+id/btn_gotohome"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/shape_btn"
+            android:textColor="#fff"
+            android:text="Go to Home"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+    </LinearLayout>

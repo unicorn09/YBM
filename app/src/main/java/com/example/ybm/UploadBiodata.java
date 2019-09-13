@@ -43,15 +43,15 @@ public class UploadBiodata extends AppCompatActivity implements View.OnClickList
     private static final int PICK_PDF_CODE =3 ;
     private static final int GALLERY_INTENT = 5;
     private static final int PICK_FROM_CAMERA =6 ;
-    private Button button;
-    private ImageView pdf;
+    private static final int REQUEST_CAMERA =9 ;
+    private ImageView pdf;Uri uri1;
     private StorageReference storageReference;
     private DatabaseReference mDatabase;
-    private Uri outPutfileUri;
+    private Uri filePath;StorageReference sRef;
     private ImageView camera_image;
     private ProgressDialog progressDialog;
+    private Button finishbtn;
     String user_id= FirebaseAuth.getInstance().getUid();
-    String user_id1= FirebaseAuth.getInstance().getUid();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -65,31 +65,25 @@ public class UploadBiodata extends AppCompatActivity implements View.OnClickList
         storageReference = FirebaseStorage.getInstance().getReference();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         progressDialog=new ProgressDialog(this);
-        button=(Button)findViewById(R.id.finish);
-        button.setOnClickListener(this);
+        finishbtn=(Button)findViewById(R.id.finish);
+        finishbtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v==pdf)
+        if (v == pdf) {
             getPDF();
-        if(v==camera_image)
-        {
-            getpicture();
         }
-        if(v==button)
-        {
-            Intent i=new Intent(this,Thankyou.class);
-            startActivity(i);
+        if (v == camera_image) {
+            cameraIntent();
         }
+        if(v==finishbtn)
+            startActivity(new Intent(this,Thankyou.class));
     }
-
-    private void getpicture() {
-        Intent captureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        File file = new File(Environment.getExternalStorageDirectory(), "MyPhoto.jpg");
-        outPutfileUri = Uri.fromFile(file);
-        captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, outPutfileUri);
-        startActivityForResult(captureIntent, PICK_FROM_CAMERA);
+    private void cameraIntent()
+    {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_CAMERA);
     }
 
     private void getPDF() {
@@ -111,55 +105,67 @@ public class UploadBiodata extends AppCompatActivity implements View.OnClickList
         super.onActivityResult(requestCode, resultCode, data);
         //when the user choses the file
         if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK ) {
-            //if a file is selected
             if (data.getData() != null) {
-                Uri uri1=data.getData();
-                final StorageReference sRef = storageReference.child(user_id+ getFileExtension(uri1));
+                uri1=data.getData();
+                 sRef = storageReference.child(user_id+getFileExtension(uri1));
                 progressDialog.show();
-   //kundan     final DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference().child("cv");
-                sRef.putFile(uri1)
-                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                            @Override
-                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                progressDialog.dismiss();
-                           //kundan     final DatabaseReference newpost = mDatabase.push();
-                                if (taskSnapshot.getMetadata() != null) {
-                                    if (taskSnapshot.getMetadata().getReference() != null) {
-                                        Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
-                                        result.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                            @Override
-                                            public void onSuccess(Uri uri) {
-                                                String pdfurl = uri.toString();
-                                              //kundan  newpost.child("image").setValue(pdfurl);
-                                                progressDialog.dismiss();
-
-                                            }
-                                        });
-                                    }
-                                }
-                                //displaying success toast
-                                Toast.makeText(getApplicationContext(), "File Uploaded ", Toast.LENGTH_LONG).show();
-                            }
-                        })
-
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception exception) {
-                                progressDialog.dismiss();
-                                Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        })
-                        .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                            @Override
-                            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                                //displaying the upload progress
-                                double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                                progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
-                            }
-                        });
-            } else {
-
-            }
+                uploadfile();
         }}
-        }
+        else if (requestCode == REQUEST_CAMERA&&resultCode==RESULT_OK)
+            onCaptureImageResult(data);}
+
+    private void onCaptureImageResult(Intent data) {
+        if (data.getData()!= null) {
+            uri1 = data.getData();
+             sRef = storageReference.child(user_id + getFileExtension(uri1));
+            progressDialog.show();
+            uploadfile();
+        }}
+void uploadfile()
+{
+    final DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference().child("usersProfile").child(user_id);
+    sRef.putFile(uri1)
+            .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    progressDialog.dismiss();
+                    final DatabaseReference newpost = mDatabase.child("CV");
+                    if (taskSnapshot.getMetadata() != null) {
+                        if (taskSnapshot.getMetadata().getReference() != null) {
+                            Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
+                            result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String pdfurl = uri.toString();
+                                    newpost.setValue(pdfurl);
+                                    progressDialog.dismiss();
+
+                                }
+                            });
+                        }
+                    }
+                    //displaying success toast
+                    Toast.makeText(getApplicationContext(), "File Uploaded ", Toast.LENGTH_LONG).show();
+                }
+            })
+
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    progressDialog.dismiss();
+                    Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            })
+            .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    //displaying the upload progress
+                    double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                    progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
+                }
+            });
+}
+}
+
+
 

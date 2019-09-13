@@ -42,23 +42,23 @@
             android:src="@drawable/ic_profile"
             android:layout_marginTop="105.6dp"/>
         <TextView
+            android:id="@+id/bio_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textColor="#000000"
             android:lineSpacingExtra="6sp"
             android:gravity="center_horizontal"
-            tools:text="Rajat Vallabh"
             android:layout_marginTop="11.6dp"
             />
         <TextView
+            android:id="@+id/text_age_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:textColor="#646464"
             android:lineSpacingExtra="12sp"
             android:gravity="center_horizontal"
-            tools:text="21yrs, Begusarai, Bihar"
             android:layout_marginTop="4dp"/>
         <TextView
             android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
             android:textColor="#8e8e8e"
             android:lineSpacingExtra="3sp"
             android:gravity="center_horizontal"
-            tools:text="#SupportYBM"
+            android:text="#SupportYBM"
             android:layout_marginTop="171dp"/>
 
         <LinearLayout
@@ -91,7 +91,7 @@
                     android:fontFamily="@font/proximanovasemibold"
                     android:textColor="#a5a5a5"
                     android:lineSpacingExtra="3sp"
-                    tools:text="Amount"
+                    android:text="Amount"
                     android:layout_centerVertical="true"
                     />
 
@@ -108,6 +108,7 @@
                     android:paddingLeft="14dp"
                     android:fontFamily="@font/proximanovasemibold"
                     android:textColor="#000"
+                    android:inputType="number"
                     android:layout_width="252dp"
                     android:layout_height="45dp"
                     android:background="@drawable/shape_donate"
@@ -123,22 +124,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="10dp"
+        android:orientation="vertical"
+        android:gravity="bottom"
         >
 
         <Button
+            android:id="@+id/btn_get_started"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:background="@drawable/shape_button_submit"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="15sp"
-            android:textColor="#ffffff"
-            android:layout_gravity="bottom"
+            android:background="@drawable/shape_btn"
+            android:textColor="#fff"
             android:text="Donate"
-            />
+            android:layout_margin="10dp"/>
+
 
     </LinearLayout>
-
 
 </LinearLayout>

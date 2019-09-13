@@ -20,5 +20,6 @@ private Button button;
     public void onClick(View v) {
         if(v==button)
             startActivity(new Intent(this,Bio.class));
+        finish();
     }
 }
