@@ -1,5 +1,6 @@
 package com.example.ybm;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -165,6 +166,9 @@ public class BasicInfo extends AppCompatActivity implements View.OnClickListener
 
             UploadBasicInfo u=new UploadBasicInfo(name,age,gender,belongyes,districtstring,currentyes);
             mrefrence.setValue(u);
+            Intent i=new Intent(BasicInfo.this,UploadBiodata.class);
+            startActivity(i);
+            finish();
         }
     }
 
