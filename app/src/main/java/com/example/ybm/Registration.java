@@ -55,11 +55,11 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
         //CHECK IF MAIL OR PASSWORD IS LEFT EMPTY
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(this, "enter your email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter your email", Toast.LENGTH_SHORT).show();
             return;
         }
         if(TextUtils.isEmpty(Password)){
-            Toast.makeText(this, "enter your password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show();
             return;
         }
 
