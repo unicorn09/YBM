@@ -45,6 +45,7 @@
             android:layout_marginTop="100dp"
             android:paddingLeft="15dp"
             android:hint="Your Name"
+            android:inputType="textPersonName"
             android:background="@drawable/shape_text_input_box"
             />
 
@@ -264,13 +265,13 @@
 
     </RelativeLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="12dp"
         android:orientation="vertical"
         >
-
 
 
         <LinearLayout
@@ -287,6 +288,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/liveinbihar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Do you also currently live in Bihar"
@@ -304,6 +306,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/currentyes"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15sp"
@@ -318,6 +321,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/currentno"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15sp"
@@ -343,6 +347,7 @@
 
 
             <Button
+                android:id="@+id/nextAndUpload"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:textColor="#FFF"
@@ -352,8 +357,9 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+
 
     </LinearLayout>
 
 
-</LinearLayout>
